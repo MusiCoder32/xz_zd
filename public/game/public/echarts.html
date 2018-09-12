@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="edge">
+    <title>echarts</title>
+    <style>
+    </style>
+    <script src="echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:400px">
+</div>
+<script>
+    var main = document.getElementById("main")
+    var myChart = echarts.init(main);
+
+    var ajax = new XMLHttpRequest();
+    ajax.open('get', 'http://localhost:3000/list');
+    ajax.send();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            var data = JSON.parse(ajax.responseText)
+            console.log(data.name,data.value)
+            var option = {
+                title: {
+                    text: 'ECharts 入门示例'
+                },
+                tooltip: {},
+                legend: {
+                    data: ['销量']
+                },
+                xAxis: {
+                    data: data.name
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: data.value
+                }]
+            };
+            myChart.setOption(option)
+        }
+    }
+
+
+    // mychart.setOption(option)
+</script>
+</body>
+</html>

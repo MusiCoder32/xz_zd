@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        svg {
+            background-color: yellow;
+        }
+
+        #r0 {
+            fill: #f00;
+            fill-opacity: 0.6;
+            stroke: #fc0;
+            stroke-opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<hr>
+<h4>新方法</h4>
+<svg id="svg" height="400" width="400">
+
+</svg>
+<script>
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", "http://localhost:3000/list");
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var width = 30;
+            var x = 50;
+            var y = 350;
+            var data = JSON.parse(xhr.responseText);
+            // console.log(data.name,data.value)
+
+            for (var i in data.name) {
+                var height = 2*data.value[i];
+                var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("width", `${width}`);
+                rect.setAttribute("height", `${height}`);
+                rect.setAttribute("fill", "red");
+                rect.setAttribute("x", `${x}`);
+                rect.setAttribute("y", `${y-height}`);
+                rect.setAttribute("stroke", "black");
+                document.getElementById("svg").appendChild(rect) ;
+                x += 80;
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

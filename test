@@ -1,0 +1,855 @@
+1.
+(单选题)关于 CSS3 中新样式属性的浏览器兼容性，下列说法中错误的是（）。
+ A.IE浏览器需要前缀 *
+ B.Chrome 和 Safari 需要前缀 -webkit-
+ C.Firefox 需要前缀 -moz-
+ D.Opera 需要前缀 -o-
+答案：A 解析 ：...
+2.
+(单选题)有如下HTML和JavaScript代码
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(function(){
+$(".l").children(".con").hide();
+$(".title").mouseover(function(){
+$(this).siblings().slideDown();
+代码处1
+});
+$(".title").mouseout(function(){
+$(this).siblings().slideUp();
+});
+});
+</script>
+</head>
+<body>
+<div class="l">
+<div class="title"> 日用百货</div>
+<div class="con">
+<ul>
+<li>洗面奶</li>
+<li>润发乳</li>
+<li>沐浴露</li>
+</ul>
+</div>
+</div>
+
+<div class="l">
+<div class="title">文玩</div>
+<div class="con">
+<ul>
+<li>菩提子</li>
+<li>核桃</li>
+<li>橄榄核</li>
+</ul>
+</div>
+</div>
+
+<div class="l">
+<div class="title">食品</div>
+<div class="con">
+<ul>
+<li>酸奶</li>
+<li>大面包</li>
+<li>可乐</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
+以上代码所完成的效果是当鼠标移入到指定的标题上，会显示出该标题下的内容。其他标题下的内容自动隐藏。以下选项中，适合填入到代码处1的选项是（）
+ A.$(this).parent().children(".con").slideUp();
+ B.$(this).parent().siblings().children().slideUp();
+ C.$(this).parent().siblings().children(".con").slideUp();
+ D.$(this). siblings().children(".con").slideUp();
+答案：C 解析 ：...
+3.
+(单选题)有如下HTML代码：
+<body>
+<form>
+<input id="count" type="number" step="2" min="0" max="20">
+<input type="submit" value="提交">
+</form>
+</body>
+有如下JavaScript代码：
+<script type="text/javascript" language="javascript">
+var quantity = document.getElementById("count");
+quantity.onblur = function(){
+if(quantity.validity. 空白处1 ){
+quantity.setCustomValidity("值无效，需要偶数值");
+}else if(quantity.validity. 空白处2 ){
+quantity.setCustomValidity("最小值为2");
+}else if(quantity.validity. 空白处3 ){
+quantity.setCustomValidity("最大值为20");
+}else if(quantity.validity.customError){
+quantity.setCustomValidity("");
+}
+}
+</script>
+现需要实现，用户单击“提交”按钮时，校验文本框中的录入，并按照js代码中的文本进行校验提示。下列选项中，能按顺序分别填入横线空白处的正确代码是（）。
+ A.typeMismatch、 rangeOverflow和 rangeUnderflow
+ B.typeMismatch、 rangeUnderflow 和 rangeOverflow
+ C.stepMismatch、 rangeOverflow和 rangeUnderflow
+ D.stepMismatch、 rangeUnderflow 和 rangeOverflow
+答案：D 解析 ：...
+4.
+(单选题)有 html 代码如下：
+<body>
+<a>login</a>
+<div id="news">
+<a>新闻标题1</a>
+<a class="current">新闻标题2</a>
+<a>新闻标题3</a>
+</div>
+</body>
+还有 JavaScript 代码如下：
+var div = document.querySelector('#news');
+var aNodes = div.querySelectorAll('a');
+console.log(aNodes.length);
+var node = div.querySelector('a.current');
+console.log(node.innerHTML);
+上述代码的输出结果是（）。
+ A.先输出 3，再输出“新闻标题2”
+ B.先输出 4，再输出“新闻标题2”
+ C.先输出 3，再输出 null
+ D.先输出 4，再输出 null
+答案：A 解析 ：...
+5.
+(单选题)有如下HTML代码：
+<body>
+<form>
+<input id="user" type="text" 空白处1 placeholder="请输入用户名称">
+<input type="submit" value="提交">
+</form>
+</body>
+有如下JavaScript代码：
+<script type="text/javascript" language="javascript">
+var user = document.getElementById("user");
+user.onblur = function(){
+if(user.validity.valueMissing){
+user.setCustomValidity("用户名不能为空.");
+}else if(user.validity. 空白处2 ){
+user.setCustomValidity("用户名必须是6至12之间的英文.");
+}else if(user.validity.customError){
+user.setCustomValidity("");
+}
+}
+</script>
+现需要实现，用户单击“提交”按钮时，用户名不允许为空，且必须为6至12之间的英文。下列选项中，能填入横线空白处的正确代码是（）。
+ A.required pattern="^[a-zA-Z]{6,12}$" 和 patternMismatch
+ B.required pattern="^[a-zA-Z]{6,12}$" 和 typeMismatch
+ C.pattern="^[a-zA-Z]{6,12}$" 和 patternMismatch
+ D.pattern="^[a-zA-Z]{6,12}$" 和 typeMismatch
+答案：A 解析 ：...
+6.
+(单选题)有如下HTML代码：
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(function(){
+空白处
+});
+</script>
+</head>
+<body>
+<ul>
+<li>法拉利</li>
+<li>保时捷</li>
+<li>辉腾</li>
+</ul>
+<ul>
+<li>丰田</li>
+<li>尼桑</li>
+<li>英菲尼迪</li>
+</ul>
+</body>
+</html>
+如果想搜索结果中只包含丰田，那么空白处中能够填写的选项为（）。
+ A.$("ul li").text()
+ B.$("li:nth-child(4)").text()
+ C.$("li:eq(3)").text()
+ D.$("li:eq(4)").text()
+答案：C 解析 ：...
+7.
+(多选题)有代码如下：
+<html lang="en">
+<head>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(function(){
+$("ul li").each(function(i){
+if(i % 2 == 0){
+$(this).css("background-color","red");
+}else{
+$(this).css("border","1px solid blue");
+}
+});
+});
+</script>
+</head>
+<body>
+<ul>
+<li>Java企业级开发</li>
+<li>Web前端</li>
+<li>Php研发工程师</li>
+<li>网络工程师</li>
+<li>Android开发工程师</li>
+</ul>
+</body>
+</html>
+下列选项中，能实现和上述代码相同效果的是（）。
+ A.$("li:odd").css("background-color","red");
+$("li:even").css("border","1px solid blue");
+ B.$("li:even").css("background-color","red"); $("li:odd").css("border","1px solid blue");
+ C.$("ul").children().each(function(){
+if($("ul").children().index(this) % 2 == 0)
+$(this).css("background-color","red");
+}else{
+$(this).css("border","1px solid blue");
+}
+ D.$(ul li:odd).css("background-color","red");
+$(ul li:even).css("border","1px solid blue");
+答案：BC 解析 ：...
+8.
+(单选题)有如下html代码
+<html lang="en">
+<head>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(function(){
+$("div").animate({left:"100px",top:"200px"},3000);
+});
+</script>
+</head>
+<body>
+<div style="width:100px;height:100px;border:1px solid red;"></div>
+</body>
+</html>
+该段代码执行完毕后的效果为（）
+ A.div先向右移动100个像素，再向下移动200个像素
+ B.div在向右移动100个像素的同时也向下移动200个像素
+ C.没有任何显示效果
+ D.宽度没有变化，高度变为200个像素
+答案：C 解析 ：...
+9.
+(单选题)有如下HTML代码：
+<body>
+<video id="media" width="720" height="400" controls loop poster="img/01.jpg">
+<source src="source/video.mp4"></source>
+</video>
+<div id="adv">
+<img src="img/01.jpg" width="300" height="100" />
+</div>
+</body>
+以及以下CSS和JavaScript代码
+<style>
+#adv{
+position:absolute;
+top:100px;
+left:150px;
+display:none;
+}
+</style>
+<script>
+function userPause(){
+document.getElementById('adv').style.display='block';
+}
+
+function userPlay(){
+document.getElementById('adv').style.display='none';
+}
+
+function initial(){
+elem = document.getElementById('media');
+elem.addEventListener('pause',userPause,false);
+elem.addEventListener('play',userPlay,false);
+}
+window.addEventListener('load',initial,false);
+</script>
+以上代码运行的结果可能是（）。
+ A.显示的播放器没有控制按钮面板
+ B.当点击暂停时，除了能够暂停视频外，再无其他的显示效果
+ C.当点击暂停按钮时，可以将01.jpg图像显示在视频播放器上
+ D.该视频不能重复播放
+答案：C 解析 ：...
+10.
+(多选题)关于 CSS 样式中，“内容生成”的相关说法，正确的是（）。
+ A.使用伪元素 :before 和 :after 可以将内容添加到某个选择器定义的单个或者多个元素的每一个实例之前或者之后，实现为文档添加内容的效果
+ B.content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容
+ C.counter() 函数用于为指定计数器创建计数字符串
+ D.counter-reset 属性用于定义计数器，并设置其初始值，该属性只能用在 <body> 元素中，用于声明计数器
+答案：ABC 解析 ：...
+11.
+(单选题)查看如下代码：
+var arr = [ [ 11, 12, 13 ], [ 21 ], [ 31, 32] ];
+console.log( arr[1][1] );
+console.log( arr[2][1] );
+执行后的结果是（）。
+ A.undefined 和 32
+ B.21 和 31
+ C.11 和 21
+ D.程序错误
+答案：A 解析 ：...
+12.
+(多选题)下列描述中，正确的是（）
+ A. 全局变量直接定义在全局中，不属于任何函数的变量；
+ B. 全局变量可反复使用，随处可用；
+ C.局部变量仅在函数内可用，出了函数不能使用；
+ D.局部变量可反复使用，随处可用；
+答案：ABC 解析 ：考察变量的作用域。
+13.
+(单选题)有 JavaScript 代码如下：
+var jsObj = 空白处 ;
+alert(jsObj.name + ":" + jsObj.score.math);
+现需要实现，弹出结果为“mary:85”。下列选项中，能填入横线空白处的正确代码是（）。
+ A.{ 'name': ' mary', 'score': { 'en': 90, 'math': 85} }
+ B."{ 'name': ' mary', 'score': { 'en': 90, 'math': 85} }"
+ C.{ 'name': ' mary', 'score.math': 85 }
+ D."{ 'name': ' mary', 'score.math': 85 }"
+答案：A 解析 ：...
+14.
+(单选题)页面上有 id 为 c1 的 <canvas> 元素，现需要实现，在 <canvas> 元素区域，绘制一个线性渐变的矩形。该矩形为边长100的正方形，最左侧为红色，最右侧为蓝色，颜色从左向右横向线性渐变。有JavaScript 代码如下：
+var canvas = document.getElementById("c1").getContext("2d");
+var grad=canvas. 空白处1 ;
+grad.addColorStop(0,'red');
+grad.addColorStop(1,'blue');
+canvas.fillStyle = grad;
+canvas. 空白处2 ;
+为实现所需效果，下列选项中，能按顺序分别填入横线空白处的正确代码是（）。
+ A.createLinearGradient(0,0,100,0)和 fillRect(0,0,100,100);
+ B.createLinearGradient(0,0,100,100)和 fillRect(0,0,100,100);
+ C.createLinearGradient(0,0,0,100)和 strokeRect(0,0,100,100);
+ D.createLinearGradient(0,0,100,100)和 strokeRect(0,0,100,100);
+答案：A 解析 ：...
+15.
+(单选题)有 html 代码如下：
+<div id="d1">
+<span>bb</span>
+</div>
+还有 JavaScript 代码如下：
+var obj = document.getElementById("d1");
+console.log(obj.firstChild.nodeName);
+上述代码的输出结果是（）。
+ A.span
+ B.SPAN
+ C.#text
+ D.#TEXT
+答案：C 解析 ：...
+16.
+(单选题)有 JavaScript 代码如下：
+function sendRequest(){
+var xmlString = "<user>";
+xmlString += "<username>mary</username>";
+xmlString += "<password>123456</password>";
+xmlString += "</user>";
+
+var xhr = createXhr();
+//...其他代码，略
+xhr.setRequestHeader("Content-Type"," 空白处 ");
+xhr.send("xmlString="+xmlString);
+}
+其中，方法createXhr用于创建并返回一个AJAX异步对象XMLHttpRequest。现需要实现，将变量 xmlString 中的 xml 数据发送到服务器端，并设置正确的请求头。下列选项中，能填入横线空白处的正确代码是（）。
+ A.什么都不写
+ B.text/plain
+ C.application/x-www-form-urlencoded
+ D.multipart/form-data
+答案：C 解析 ：...
+17.
+(单选题)有 html 代码如下：
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+<input type="range" id="a" min="1" max="50" value="0" step="1" /> +
+<input type="text" id="b" value="0" />=
+<output name="result" for="a b"></output>
+</form>
+如果在文本框中输入文本50，上述代码的输出结果是（）。
+ A.没有任何执行效果
+ B.output处显示结果为51
+ C.控制台输出错误
+ D.output处显示结果为 50
+答案：B 解析 ：...
+18.
+(多选题)有 html以及 Javascript 代码如下：
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script language="javascript" src="js/jquery-1.11.1.js"></script>
+<script language="javascript" src="datepicker/WdatePicker.js"></script>
+</script>
+</head>
+<body>
+<input type="text" id="fromDate" />
+To
+<input type="text" id="toDate" />
+</body>
+</html>
+现想完成toDate的选取时间不能早于fromDate所选取的时间，以下选项中哪个是正确的（）
+ A.$("#toDate").focus(function(){
+WdatePicker({
+dateFmt:"yyyy-MM-dd"
+});
+});
+ B.$("#toDate").focus(function(){
+WdatePicker({
+dateFmt:"yyyy-MM-dd",
+minDate:"#F{$dp.$D('fromDate')}"
+});
+});
+ C.$("#toDate").focus(function(){
+WdatePicker({
+dateFmt:"yyyy-MM-dd",
+minDate:$("#fromDate").val()
+});
+});
+ D.$("#toDate").focus(function(){
+WdatePicker({
+dateFmt:"yyyy-MM-dd",
+maxDate:"#F{$dp.$D('fromDate')}"
+});
+});
+答案：BC 解析 ：...
+19.
+(单选题)查看如下代码：
+var setObj=function(o){
+o.name="mary";
+}
+
+var p={ name:"john", age:24};
+setObj(p);
+console.log(p.name);
+console.log(p.age);
+上述代码运行后，输出结果为（）。
+ A.输出 mary 和 24
+ B.输出 mary 和 undefined
+ C.输出 john 和 undefined
+ D.输出 mary 和 0
+答案：A 解析 ：...
+20.
+(多选题)有 CSS样式代码定义如下：
+@keyframes change{
+from { transform:rotate(90deg); }
+to { transform:rotate(450deg); }
+}
+#d1 {
+width:150px;
+height:150px;
+border:1px solid black;
+transform-origin:100% 100%;
+animation:change 5s linear 1s 2;
+}
+html 代码中，有 id 属性值为 d1 的 <div> 元素。对于上述代码的运行效果，下列描述中，正确的是（）。
+ A.元素在1s后，开始以右下角为原点进行旋转，旋转的起始角度为顺时针90度
+ B.元素将在5秒之内顺时针旋转2圈
+ C.元素将在10秒之内顺时针旋转2圈
+ D.完成动画后，元素回到初始位置
+答案：ACD 解析 ：...
+21.
+(单选题)关于 CSS 中的过渡属性，下列说法中，错误的是（）。
+ A.使用过渡属性，可以使得 CSS 的某些属性值在一段时间内实现逐渐变化的效果
+ B.所有的 CSS 样式属性都可以设置过渡效果
+ C.设置过渡时，可以指定 4 个要素：过渡的属性、过渡所需时间、过渡函数以及过渡延迟时间
+ D.过渡可以由用户的行为（如点击、悬浮等）触发，也可以由元素的状态变化触发，或者由 JavaScript 代码触发
+答案：B 解析 ：...
+22.
+(单选题)下列属性中，用于验证用户的输入与要求的类型是否匹配的是（）。
+ A.typeMismatch
+ B.patternMismatch
+ C.stepMismatch
+ D.customError
+答案：A 解析 ：...
+23.
+(多选题)有变量 obj 表示页面上的某个元素。现需要设置该元素在页面上不可见。下列选项中，正确的是（）。
+ A.obj.style.display = "none";
+ B.obj.style.visibility = "hidden";
+ C.obj.style.opacity = 0;
+ D.obj.style.width = 0;
+答案：ABC 解析 ：...
+24.
+(单选题)关于 CSS 中的转换属性，下列说法中，错误的是（）。
+ A.转换是使元素改变形状、尺寸和位置的一种效果
+ B.transform 属性向元素应用 2D 或 3D 转换，语法为 transform : none/transform-function;其中，none 为默认值，表示元素不进行转换；而 transform-function 表示一个或者多个转换函数，中间以空格分开
+ C.默认情况下，转换的原点在元素的左上角
+ D.可以使用 transform-origin 属性用来指定元素的转换原点位置
+答案：C 解析 ：...
+25.
+(多选题)页面上有 id 为 c1 的 <canvas> 元素，现需要实现，在 <canvas> 元素区域，绘制一个黄色扇形区域，大小为四分之一圆形，半径为100，扇形的方向不限。有JavaScript 代码如下：
+var canvas = document.getElementById("c1").getContext("2d");
+canvas.beginPath();
+空白处
+canvas.closePath();
+canvas.fillStyle = "yellow";
+canvas.fill();
+为实现所需效果，下列选项中，能填入横线空白处的正确代码是（）。
+ A.canvas.arc(100,100,100,0,Math.PI/2,false);
+canvas.lineTo(100,100);
+ B.canvas.arc(100,100,100,0,Math.PI/2,true);
+canvas.lineTo(100,100);
+ C.canvas.arc(100,100,100,Math.PI/2,0,true);
+canvas.lineTo(100,100);
+ D.canvas.arc(100,100,100,0,Math.PI/2,false);
+答案：AC 解析 ：...
+26.
+(单选题)有 html 代码如下：
+<body>
+<div id="d1"><span>bb</span></div>
+</body>
+还有 JavaScript 代码如下：
+var obj = document.getElementById("d1");
+var newObj = document.createElement("p");
+newObj.innerHTML = "text";
+obj.insertBefore(newObj, obj.firstChild);
+console.log(obj.innerHTML);
+上述代码的输出结果是（）。
+ A.<p>text<span>bb</span></p>
+ B.<p>text</p><span>bb</span>
+ C.<span>bb</span><p>text</p>
+ D.代码错误
+答案：B 解析 ：...
+27.
+(单选题)现需要实现每隔一秒钟弹出一个对话框，且此弹出过程持续5秒钟。下列选项中，正确的是（）。
+ A.var id = setInterval(alert("Hello JavaScript"),1000);
+setTimeout(clearInterval(id),5*1000);
+ B.setInterval(function(){alert("Hello JavaScript");},1000)
+setTimeout(function(){alert("Hello JavaScript");},5*1000)
+ C.setInterval(alert("Hello JavaScript"),1000);
+setTimeout(clearInterval(id),5*1000);
+ D.var id = setInterval(function(){alert("Hello JavaScript");},1000)
+setTimeout(function(){clearInterval(id);},5*1000)
+答案：D 解析 ：...
+28.
+(单选题)下列选项中，能够在新的浏览器窗口或者标签页中打开目标页面的是（）。
+ A.location.href = "http://tts.tarena.com.cn";
+ B.history.go("http://tts.tarena.com.cn");
+ C.window.open("http://tts.tarena.com.cn");
+ D.location.replace("http://tts.tarena.com.cn");
+答案：C 解析 ：...
+29.
+(单选题)有 html以及 Javascript 代码如下：
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(function(){
+console.log($("div").text());
+});
+</script>
+</head>
+<body>
+<div>Hello World</div>
+<div id="myDiv">Hello Tarena</div>
+</body>
+</html>
+上述代码的输出结果是（）。
+ A.Hello World
+Hello Tarena
+ B.Hello World
+ C.Hello Tarena
+ D.Hello WorldHello Tarena
+答案：D 解析 ：...
+30.
+(多选题)有 html 代码如下：
+<input id="t1" type="button" value="text" />
+现需要将该按钮修改为文本框。下列选项中，正确的是（）。
+ A.var obj = document.getElementById("t1");
+obj.attributes["type"].remove();
+ B.var obj = document.getElementById("t1");
+obj.removeAttribute("type");
+ C.var obj = document.getElementById("t1");
+obj.removeAttributeNode(obj.attributes["type"]);
+ D.var obj = document.getElementById("t1");
+obj.deleteAttribute("type");
+答案：BC 解析 ：...
+31.
+(多选题)下列选项中，属于 <video> 元素的事件的是（）。
+ A.ended
+ B.pauseed
+ C.play
+ D.error
+答案：ACD 解析 ：...
+32.
+(单选题)有下述JS代码：
+var x = 10;
+function add( num ){
+num++;
+console.log( 'num='+num );
+}
+add(x);
+console.log( 'x='+x );
+此段代码执行后的结果是（）。
+ A.num=10
+x=10
+ B.num=11
+x=10
+ C.num=10
+x=11
+ D.num=11
+x=11
+答案：B 解析 ：...
+33.
+(单选题)有 html 代码如下：
+<body>
+<p id="p1">回复<a>10</a></p>
+</body>
+还有 JavaScript 代码如下：
+var p = document.getElementById('p1');
+console.log(p.firstChild.innerHTML);
+console.log(p.firstElementChild.innerHTML);
+上述代码的输出结果是（）。
+ A.代码错误
+ B.两次都输出 10
+ C.先输出 undefined，再输出 10
+ D.先输出 “回复”，再输出 10
+答案：C 解析 ：...
+34.
+(单选题)有HTML代码如下：
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+上述代码在页面上显示时，希望实现：页面上显示三个段落，每个段落中的文本内容分别为”段落1“、”段落2“、”段落3“。为实现上述效果，需要添加的 CSS 代码为（）。
+ A.body {counter-reset:quantity;}
+p { counter-increment:quantity;}
+p:before{ content:counter(quantity);}
+ B.p { counter-reset:quantity;counter-increment:quantity;}
+p:before{ content:counter(quantity);}
+ C.body {counter-reset:quantity;}
+p { counter-increment:quantity;}
+p:after{ content:counter(quantity);}
+ D.p { counter-reset:quantity;counter-increment:quantity;}
+p:after{ content:counter(quantity);}
+答案：C 解析 ：...
+35.
+(单选题)有如下HTML代码：
+<body>
+<canvas id="c1" width="300" height="300" style="border:1px solid black;"></canvas>
+</body>
+有如下JavaScript代码：
+var canvas = document.getElementById("c1").getContext("2d");
+canvas. 空白处1 ;
+canvas. 空白处2 ;
+现需要实现，在 <canvas> 元素区域，绘制一个空心正方形，边长为200，再绘制一个实心正方形，边长为100。两个正方形的中心点与 <canvas> 元素的中心点重合。下列选项中，能按顺序分别填入横线空白处的正确代码是（）。
+ A.fillRect(0,0,200,200) 和 strokeRect(0,0,100,100);
+ B.fillRect(50,50,200,200) 和 strokeRect(100,100,100,100);
+ C.strokeRect(50,50,200,200) 和 fillRect(100,100,100,100);
+ D.strokeRect(0,0,200,200) 和 fillRect(0,0,100,100);
+答案：C 解析 ：...
+36.
+(单选题)查看如下代码：
+function func1(arr) {
+for(var data in arr) {
+data++;
+}
+for(var i=0;i<arr.length;i++) {
+arr[i]++;
+}
+}
+
+var datas = [10,20];
+func1(datas);
+console.log(datas.toString());
+执行后的结果是（）。
+ A.10,20
+ B.11,21
+ C.12,22
+ D.13,23
+答案：B 解析 ：...
+37.
+(单选题)在HTML文档中包含一个超链接，要实现当鼠标移入该链接时，超链接文本大小变为30px。下列选项中，正确的是（）。
+ A.<a href="#" onmouseover="this.style.fontSize=’30px’">注册</a>
+ B.<a href="#" onmouseover ="this.style.font-size=’30px’">注册</a>
+ C.<a href="#" onmouseover="this.style.fontsize=’30px’">注册</a>
+ D.<a href="#" onmouseover="this.style.font.size=’30px’">注册</a>
+答案：A 解析 ：...
+38.
+(单选题)有如下JavaScript 和 Html代码：
+<script>
+function saveData(){
+sessionStorage.setItem('naruto','Uzumaki Naruto');
+sessionStorage.setItem('kakashi','Hatake Kakashi');
+}
+
+function getAllData(){
+var len=sessionStorage.length;
+for(var i=0;i<len;i++){
+var key=sessionStorage.key(i);
+alert(sessionStorage.getItem(key));
+}
+}
+
+function clearData(){
+sessionStorage.removeItem('uname');
+sessionStorage.clear();
+alert(sessionStorage.length);
+}
+</script>
+</head>
+<body>
+<input type="button" value="Click" onclick="saveData()" />
+<input type="button" value="Get Data" onclick="getAllData()" />
+<input type="button" value="Clear Data" onclick="clearData()" />
+</body>
+页面加载完成直接点击Get Data按钮，弹出的结果是（）。
+ A.先弹出 Hatake Kakashi ， 然后弹出 Uzumaki Naruto
+ B.只弹出Hatake Kakashi
+ C.弹出null
+ D.不弹出任何东西
+答案：D 解析 ：...
+39.
+(单选题)页面上有一个提交按钮，单击该提交按钮后，需要弹出确认对话框。如果单击对话框上的“取消”按钮，则页面停留在当前页面；如果单击对话框上的“确定”按钮，则发生表单提交。为实现此功能，以下代码中，正确的是（）。
+ A.<form>
+<input type="submit" value="delete" onclick="return confirm('真的要删除吗？');" />
+</form>
+ B.<form>
+<input type="submit" value="delete" onclick="confirm('真的要删除吗？');" />
+</form>
+ C.<form>
+<input type="button" value="delete" onclick="return confirm('真的要删除吗？');" />
+</form>
+ D.<form>
+<input type="button" value="delete" onclick="confirm('真的要删除吗？');" />
+</form>
+答案：A 解析 ：...
+40.
+(多选题)有 html 代码如下：
+<select id="datas" size="5">
+<option>aa</option>
+<option>bb</option>
+<option>cc</option>
+</select>
+现需要删除列表框中的第二项（文本为bb的选项）。下列选项中，正确的是（）。
+ A.var obj = document.getElementById("datas");
+obj.removeChild(obj.firstElementChild.nextElementSibling);
+ B.var obj = document.getElementById("datas");
+obj.removeChild(obj.getElementsByTagName("option")[1]);
+ C.var obj = document.getElementById("datas");
+obj.removeChild(obj.firstChild.nextSibling);
+ D.var obj = document.getElementById("datas");
+obj.removeChild(obj.getElementsByTagName("option")[0]);
+答案：AB 解析 ：...
+41.
+(单选题)有以下代码
+$(function(){
+$.formValidator.initConfig();
+$("#pwd1").InputValidator({
+min:6,
+max:12,
+onerror:"位数不正确"
+}).CompareValidator({
+desID : "pwd",
+onerror:"两次密码输入不一致"
+});
+});
+以上代码执行过程中是否正确显示效果？如果不能的话请指出错误原因（）
+正确答案是（）。
+ A.不能显示，因为CompareValidator中没有指定datatype
+ B.能够正确显示
+ C.不能显示，因为缺少对pwd1元素的初始化即formValidator方法
+ D.不能显示，因为$.formValidator.initConfig()中必须给定参数
+答案：C 解析 ：...
+42.
+(多选题)下列选项中，用于实现文本绘制的属性的是（）。
+ A.fontStyle
+ B.textAlign
+ C.textBaseline
+ D.font
+答案：BCD 解析 ：...
+43.
+(单选题)查看如下代码：
+var a = 2;
+var b = 2<<4;
+console.log(b);
+上述代码的输出结果是（）。
+ A.0
+ B.8
+ C.16
+ D.32
+答案：D 解析 ：...
+44.
+(单选题)假设今天是2006年4月1日星期六,请问以下javascript代码输出结果是(   )
+var time = new Date( );
+document.write(time.getDate( ));
+ A.2006
+ B.4
+ C.1
+ D.6
+答案：C 解析 ：...
+45.
+(多选题)页面上有一个id为course的下拉列表框，下面选项中，能向下拉列表中添加一个新的选项的是（）。
+ A.document.course.add(new Option("JS"));
+ B.var newObj = document.createElement("option");
+newObj.innerHTML = "JS";
+document.course.add(newObj);
+ C.document.getElementById("course").add(new Option("JS"));
+ D.var newObj = document.createElement("option");
+newObj.innerHTML = "JS";
+document.getElementById("course").add(newObj);
+答案：CD 解析 ：...
+46.
+(单选题)有 html 代码如下：
+<p id="msg">通知：<span>消息</span></p>
+还有 JavaScript 代码如下：
+var p = document.getElementById('msg');
+console.log( p.nodeValue );
+console.log( p.textContent );
+上述代码的输出结果是（）。
+ A.先输出“通知：”，再输出“通知：消息”
+ B.先输出 null，再输出“通知：消息”
+ C.先输出null，再输出“消息”
+ D.先输出“通知：”，再输出“<span>消息</span>”
+答案：B 解析 ：...
+47.
+(单选题)查看如下代码：
+var arr1 = [10, 20];
+arr1.push( 30,40 );
+arr1.pop();
+arr1.push([50,60]);
+arr1.pop();
+console.log(arr1.toString());
+执行后的结果是（）。
+ A.10,20,30
+ B.10,20
+ C.10,20,30,50
+ D.10
+答案：A 解析 ：...
+48.
+(单选题)查看如下代码：
+function myFunc(){
+var x;
+console.log(x);
+x = "100";
+console.log(x);
+}
+myFunc();
+上述代码执行后，输出结果为（）。
+ A.程序错误
+ B.100 和 100
+ C.undefined 和 100
+ D.null 和 100
+答案：C 解析 ：...
+49.
+(多选题)现需要为绘制的文本添加阴影效果，需要设置阴影的颜色、水平以及垂直方向的阴影尺寸。下列选项中，需要用到的属性是（）。
+ A.shadowBlur
+ B.shadowColor
+ C.shadowOffsetX
+ D.shadowOffsetY
+答案：BCD 解析 ：...
+50.
+(多选题)有样式定义如下：
+p[class*='style']{color:Red;background-color:yellow;}
+p[class~='style1']{color:Blue;background-color:#ccc;}
+同时，有 html 代码如下所示：
+<p class="style1 style2">段落1</p>
+<p class="style2">段落2</p>
+关于上述代码在页面上的显示效果，下列说法中，正确的是（）。
+ A.第一个段落（段落1），蓝色文本，灰色背景
+ B.第一个段落（段落1），红色文本，黄色背景
+ C.第二个段落（段落2，蓝色文本，灰色背景
+ D.第二个段落（段落2），红色文本，黄色背景
+答案：AD 解析 ：...

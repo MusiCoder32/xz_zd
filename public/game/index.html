@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="edge">
+    <title>大小鱼</title>
+    <style>
+        body {
+            padding-top: 10px;
+        }
+
+        .all_bg {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+        }
+
+        #allcanvas {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        #ca1 {
+            position: absolute;
+            width: 800px;
+            height: 600px;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+        }
+
+        #ca2 {
+            position: absolute;
+            width: 800px;
+            height: 600px;
+            z-index: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="all_bg">
+    <div id="allcanvas">
+
+        <canvas id="ca1" width="800" height="600"></canvas>
+        <!--背景-->
+        <canvas id="ca2" width="800" height="600"></canvas>
+    </div>
+</div>
+<script>
+</script>
+<script src="js/commonFunctions.js"></script>
+<script src="js/background.js"></script>
+<script src="js/ane.js"></script>
+<script src="js/fruit.js"></script>
+<script src="js/fishmom.js"></script>
+<script src="js/fishbaby.js"></script>
+<script src="js/data.js"></script>
+<script src="js/wave.js"></script>
+<script src="js/halo.js"></script>
+<script src="js/dust.js"></script>
+<script src="js/collsion.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="edge">
+    <title>echarts</title>
+    <style>
+    </style>
+    <script src="echarts.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px">
+    </div>
+    <script>
+        var main=document.getElementById("main")
+     var myChart=echarts.init(main);
+
+        var ajax=new XMLHttpRequest();
+        ajax.open('get','http://localhost:3000/list');
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState==4 &&ajax.status==200) {
+               var data=JSON.parse(ajax.responseText)
+                var mydata=[]
+                for(var i in data.name){
+                   mydata[i]={"value":data.value[i],"name":data.name[i]}
+                }
+                var option={
+                    series : [
+                        {
+                            name: '访问来源',
+                            type: 'pie',
+                            // roseType:'angle',
+                            radius: '55%',
+                            center: ['50%', '60%'],
+                            data:mydata,
+                            itemStyle:{
+                                normal:{
+                                    label:{
+                                        show: true,
+                                        formatter: '{b} : {c} ({d}%)'
+                                    },
+                                    labelLine :{show:true}
+                                }
+                            }
+                        }
+                    ]
+                };
+                myChart.setOption(option)
+            }
+        }
+
+
+
+        // mychart.setOption(option)
+    </script>
+</body>
+</html>
